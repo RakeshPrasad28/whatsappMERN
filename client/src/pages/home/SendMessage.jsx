@@ -11,6 +11,11 @@ const SendMessage = () => {
     dispatch(sendMessageThunk({ receiverId: selectedUser?._id, message }));
     setMessage("");
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  };
   return (
     <div className="w-full p-3 flex gap-2">
       <input
@@ -19,6 +24,7 @@ const SendMessage = () => {
         className="input input-bordered input-primary w-full"
         onChange={(e) => setMessage(e.target.value)}
         value={message}
+        onKeyDown={handleKeyDown}
       />
       <button
         onClick={handleSendMessage}
