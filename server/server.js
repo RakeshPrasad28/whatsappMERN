@@ -11,7 +11,8 @@ import cors from "cors";
 
 connectDB();
 const allowedOrigins = [
-  "http://localhost:5173",
+  // "http://localhost:5173",
+  "https://whatsapp-five-rouge.vercel.app"
 ];
 app.use(cors({
     origin: allowedOrigins,
