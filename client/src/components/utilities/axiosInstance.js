@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const DB_URL = import.meta.env.VITE_DB_URI;
+const DB_URL = import.meta.env.VITE_DB_URI || "https://whatsapp-server-taupe.vercel.app/"
 
 const axiosInstance = axios.create({
-  baseURL: "https://whatsapp-server-taupe.vercel.app/",
+  baseURL: DB_URL,
   withCredentials: true,
   headers: {
     ContentType: "application/json",
